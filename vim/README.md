@@ -1,1 +1,1 @@
-This is for a seminar I'm working on introducing what is awesome about Vim. There is an untracked folder here you will need to view this site correctly. Just go to this folder and <code>git clone https://code.google.com/p/io-2012-slides/</code>. 
+This is for a seminar I'm working on introducing what is awesome about Vim.
