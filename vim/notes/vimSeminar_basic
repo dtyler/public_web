@@ -1,0 +1,20 @@
+Vim Seminar
+
+What makes Vim annoying: Modes
+What makes Vim powerful: Modes
+Modes:
+    Normal
+    Insert
+    Visual
+    Command-line
+Basic commands
+    (i)nsert text
+    (Esc)-ing out of insert mode
+    (hjkl) - moves cursor Left, Down, Up, Right
+    (:) - Enter command-line mode
+    
+Help!
+    Vim has awesome help built right in.
+        :help or <F1>
+        :help <topic, command, or keyboard key>
+    

@@ -1,0 +1,37 @@
+Vim Seminar
+
+.vimrc tweaks
+    Options
+        syntax on
+        set nocompatible
+        set smartindent
+        set expandtab
+        set backspace=2
+        Tab Characters
+            set softtabstop=4
+            set shiftwidth=4
+        set number
+        set showcmd
+        set showmatch
+        set incsearch
+    Keybindings
+        imap jj <ESC>
+        nnoremap ; :
+        vnoremap ; :
+        nmap <F12> :set number!<CR>
+        nmap <F4> :set invhls<CR>
+    Style
+        set laststatus
+
+Registers
+    viewing
+    register accessing
+
+Macros
+    creating/running
+    
+Tabs/Buffers/Splits
+    
+Completions
+    (Ctrl-n) in-document completion, also through c-style includes
+    (Ctrl-x Ctrl-f) file completions

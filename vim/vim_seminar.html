@@ -1,0 +1,457 @@
+<!--
+Vim Seminar
+
+Author: Daniel Tyler <dtyler@constantcontact.com>
+-->
+<!--
+Google IO 2012/2013 HTML5 Slide Template
+
+Authors: Eric Bidelman <ebidel@gmail.com>
+         Luke Mahé <lukem@google.com>
+
+URL: https://code.google.com/p/io-2012-slides
+-->
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/vim_logo.png"></aside>
+    <!-- The content of this hgroup is replaced programmatically through the slide_config.json. -->
+    <hgroup class="auto-fadein">
+      <h1 data-config-title><!-- populated from slide_config.json --></h1>
+      <h2 data-config-subtitle><!-- populated from slide_config.json --></h2>
+      <p data-config-presenter><!-- populated from slide_config.json --></p>
+    </hgroup>
+  </slide>
+
+  <slide class="">
+    <hgroup>
+        <h2>Topics in this seminar</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>What makes Vim different from other editors?</li>
+        <li>Basic operation</li>
+        <li>Why should I use Vim over other editors?</li>
+        <li>Where can I learn more?</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        <p>Mention that the goal is to show off what Vim can do. In order to really learn this stuff, work from reference
+        sheet or tutorials.</p>
+      </section>
+    </aside>
+    <hgroup>
+        <h2>What makes Vim <strike>annoying</strike> powerful: Modes</h2>
+    </hgroup>
+    <article>
+        <ul>
+          <li>Modes allow for for reuse of keys, decreasing the need for keyboard-cording</li>
+          <li>The mode in Vim are:
+            <ul class="build">
+              <li><code>Normal</code></li>
+              <li><code>Insert</code></li>
+              <li><code>Visual</code></li>
+              <li><code>Command-Line</code></li>
+            </ul>
+          </li>
+        </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        <p>Mention mode prefixes for help search: i_, v_</p>
+      </section>
+    </aside>
+    <hgroup>
+        <h2>Basic operations</h2>
+    </hgroup>
+    <article class="smaller">
+        <ul>
+          <li>(i)nsert text</li>
+          <li>(Esc)-ing out of where ever you are into normal mode</li>
+          <li>(hjkl) - moves cursor Left, Down, Up, Right</li>
+          <li>(:) - Enter command-line mode</li>
+        </ul>
+        <h3><b><u>Help!</u></b></h3>
+        <p>Vim has awesome help built in</p>
+        <ul>
+          <li>vimtutor</li>
+          <li>:help or &lt;F1&gt;</li>
+          <li>:help &lt;topic, command, or keyboard key&gt;</li>
+          <li>Cheatsheets
+            <ul>
+              <li><a href="http://www.viemu.com/vi-vim-cheat-sheet.gif">http://www.viemu.com/vi-vim-cheat-sheet.gif</a></li>
+              <li><a href="http://www.terminally-incoherent.com/blog/wp-content/uploads/2009/03/vimcheatsheet.pdf">http://www.terminally-incoherent.com/blog/wp-content/uploads/2009/03/vimcheatsheet.pdf</a></li>
+              <li><a href="http://www.fprintf.net/vimCheatSheet.html">http://www.fprintf.net/vimCheatSheet.html</a></li>
+            </ul>
+          </li>
+        </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        <p>For best Vim-ing keep your hands on the keyboard.</p>
+      </section>
+    </aside>
+    <hgroup>
+        <h2>Better movement</h2>
+    </hgroup>
+    <article>
+        <ul>
+          <li>Searching</li>
+          <ul>
+            <li>/ - starts a search</li>
+            <li>n - next match</li>
+            <li>N - next match, searching backwards</li>
+          </ul>
+          <li>Previous/Next Word</li>
+          <ul>
+            <li>w - next word (start)</li>
+            <li>e - next word (end)</li>
+            <li>b - previous word (start)</li>
+            <li>ge - previous word (end)</li>
+          </ul>
+        </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Larger jumps</h2>
+    </hgroup>
+    <article>
+        <ul>
+          <li>At times, you may want to repeat a command multiple times in a row.</li>
+          <li style="margin-left:2em">e.g. Jump multiple words with 'w' or multiple lines with 'j'.</li>
+          <li>To do this, prefix the command with the number of times you'd like it repeated.</li>
+        </ul>
+    </article>
+    <b><h3>More Movement Keys</h3></b>
+    <article>
+      <ul>
+        <li>0 - beginning of line</li>
+        <li>$ - end of line</li>
+        <li>gg - beginning of file</li>
+        <li>G - end of file</li>
+        <li>{ - beginning of paragraph</li>
+        <li>} - end of paragraph</li>
+        <li>% - Jump to matching (),[],{}, or &lt;&gt;</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        <ul>
+          <li>nocompatible - stop acting like vi</li>
+          <li>backspace=2 - short for: backspace=indent,eol,start. Allows for backspacing over automatically inserted indents, newlines, and the start of <code>insert</code> mode</li>
+          <li>laststatus - ensures that status bar is always shown</li>
+        </ul>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>.vimrc - Tweaking Vim to Your Liking</h2>
+    </hgroup>
+    <article class="smaller">
+    <div class="columns-2" style="height: 16em">
+      <ul>
+        <li>Options
+          <ul>
+            <li>syntax on</li>
+            <li>set nocompatible</li>
+            <li>set smartindent</li>
+            <li>set expandtab</li>
+            <li>set backspace=2</li>
+          </ul>
+        </li>
+        <li>Tab Characters
+          <ul>
+            <li>set softtabstop=4</li>
+            <li>set shiftwidth=4</li>
+          </ul>
+        </li>
+        <li>Style
+          <ul>
+            <li>set number</li>
+            <li>set showcmd</li>
+            <li>set showmatch</li>
+            <li>set incsearch</li>
+            <li>set laststatus=2</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>Keybindings
+          <ul>
+            <li>imap jj &lt;ESC&gt;</li>
+            <li>nnoremap ; :</li>
+            <li>vnoremap ; :</li>
+            <li>nmap &lt;F12&gt; :set number!&lt;CR&gt;</li>
+            <li>nmap &lt;F4&gt; :set invhls&lt;CR&gt;</li>
+            <li>nmap &lt;F3&gt; :set paste!&lt;CR&gt;</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>.vimrc - continued...</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Status line can contain more useful info than it does by default. For example:</li>
+        <ul>
+          <li>buffer number</li>
+          <li>file type</li>
+          <li>full path</li>
+          <li>modified flag</li>
+          <li>active register</li>
+          <li>current line</li>
+          <li>total lines</li>
+          <li>column number</li>
+          <li>percent through file</li>
+        </ul>
+      </ul>
+    </article>
+ </slide>
+
+ <slide>
+  <aside class="note">
+    <section>
+      <ul>
+      <li>Talk about default register for copy/paste</li>
+      <li>special movement commands that write to "1
+        <ul>
+          <li>%, (, ), `, /, ?, n, N, { and }</li>
+        </ul>
+      </li>
+      </ul>
+    </section>
+  </aside>
+  <hgroup>
+    <h2>Registers</h2>
+  </hgroup>
+  <article>
+    <p>Registers are places to store text for later. There are a number of different kinds of registers</p>
+    <ul>
+      <li>Numerical
+        <ul>
+          <li>"0: holds the next text most recently deleted or yanked</li>
+          <li>"1: holds old contents of register 0 after a delete (unless certain movement commands are used.)</li>
+          <li>"2-"9: with each delete, vim shifts old content along these registers</li>
+        </ul>
+      <li>
+      <li>Named Registers: "a-"z</li>
+      <li>Commands with remove text from the screen (as well as the 'yank' command) can be prefixed with a register</li>
+    </ul>
+    <pre>
+Tip: You can use CTRL-r in <code>insert</code> or <code>command-line</code> mode to insert the contents of a 
+register at cursor postion
+</pre>
+  </article>
+ </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Registers - continued...</h2>
+    </hgroup>
+    <article>
+      <h4 style="margin-bottom: .25em">Special Registers</h4>
+        <table>
+          <tr>
+            <th>Register</th><th>Description</th>
+          </tr>
+          <tr>
+            <th>""</th><th>'the unnamed register' used when no register is specified for yank/delete/paste</th>
+          <tr>
+          <tr>
+            <th>"-</th><th>'small delete', stores text deleted which is less than a line</th>
+          <tr>
+          <tr>
+            <th>".</th><th>contains the last inserted text</th>
+          <tr>
+          <tr>
+            <th>":</th><th>contains the most recently executed command-line</th>
+          <tr>
+          <tr>
+            <th>"/</th><th>last search pattern</th>
+          <tr>
+        </table>
+      </li>
+    </article>
+  </slide>
+
+ <slide>
+  <hgroup>
+    <h2>Macros</h2>
+  </hgroup>
+  <article>
+    <p>Executing the contents of registers</p>
+    <ul>
+      <li>'q' (followed by a register) begins recording commands into the given register (press 'q' again to finish)</li>
+      <li>'@' (followed by a register) plays out the contents of a register</li>
+    </ul>
+    <br>
+    <p>Macros are often used for repeated actions:</p>
+    <pre>
+" Using a macro to wrap lines '&lt;li&gt;'s
+qwI&lt;li&gt;^[A&lt;/li&gt;^[jq
+" The above sequence of keystrokes will wrap one line in &lt;li&gt; and record the action to register 'w' 
+" (picked arbitrarily for 'wrap')
+
+9@w 
+" Runs the macro 9 times, wrapping a total of 10 lines 
+" (including the one from the macro definition)
+</pre>
+  </article>
+ </slide>
+
+ <slide>
+  <hgroup>
+    <h2>Macros - continued...</h2>
+  </hgroup>
+  <article>
+    <ul>
+      <li>Breaking down the macro
+      <ul class="build">
+        <li>qw</li>
+        <li>I&lt;li&gt;</li>
+        <li>^[</li>
+        <li>A&lt;/li&gt;</li>
+        <li>^[</li>
+        <li>j</li>
+        <li>q</li>
+    </ul>
+  </article>
+ </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Completions</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>i_CTRL-n - Offers completions for the current partial word under the cursor</li>
+        <li>i_CTRL-x - Enters detained completions mode, the next key hit will determine the kind of completions offered
+          <ul>
+            <li>CTRL-n | CTRL-p - Completion of words looking forward/backward respectively</li>
+            <li>CTRL-l - Completion on entire line</li>
+            <li>CTRL-k - dictionary completions (only works if spell checking is active)</li>
+            <li>CTRL-f - filename completion (both relative to current working directory and absolute paths work)</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <aside class="note">
+      <section>
+        <p>There is an option for controlling how new buffers will be opened (with respect to splits and tabs) called 'switchbuff'</p>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>Controlling Layout</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Buffers
+          <ul>
+            <li>Every file opened in Vim is represented by a buffer</li>
+            <li>Buffers are also used to represent generated content like directory listings (when Vim is used to open a file) and the help system</li>
+            <li>Buffers can be associated with 0,1, or more "viewports" (my term, not Vim's)</li>
+          </ul>
+        </li>
+        <li>Splits
+          <ul>
+            <li>Splits divide the screen into regions providing new space for displaying buffers.</li>
+            <li>They are created by splitting the current buffer either vertically (:vsplit) or horizontally (:split). Each of these command can take an optional buffer to display in the new split</li>
+          </ul>
+        </li>
+        <li>Tabs
+          <ul>
+            <li>Each tab has it's own split layout</li>
+          </ul>
+        </li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Misc</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Use '.' to repeat your last action from current cursor position</li>
+        <li>Use CTRL-T/CTRL-D in <code>insert</code> mode to increase or decrease the indent of the current line</li>
+        <li>Explore the :colorscheme setting to color Vim to your liking</li>
+        <li>Vim can be further customized through plugins! If you think you'll be exploring this a lot, start by looking for a plugin managing plugin.</li>
+      </ul>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Learning more</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Look for similar questions on <a href="http://stackoverflow.com">stackoverflow.com</a></li>
+        <li>Practice your skills (or just read some of the awesome submissions) with <a href="http://vimgolf.com">vimgolf.com</a>
+        <li>Print out one of the cheat sheets from the earlier to reference</li>
+      </ul>
+    </article>
+  </slide>
+  <slide class="backdrop"></slide>
+
+</slides>
+
+<script>
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+  var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+  ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+  var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
