@@ -22,14 +22,14 @@ var SLIDE_CONFIG = {
 
   // Author information
   presenters: [{
-    name: 'Daniel Tyler'
+    name: 'Daniel Tyler',
+    www: 'http://www.csh.rit.edu/~dtyler/vim/vim_seminar.html',
+    github: 'http://github.com/dtyler/public_web/'
   }/*, {
     name: 'Second Name',
     company: 'Job Title, Google',
     gplus: 'http://plus.google.com/1234567890',
     twitter: '@yourhandle',
-    www: 'http://www.you.com',
-    github: 'http://github.com/you'
   }*/]
 };
 
