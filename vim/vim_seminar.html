@@ -68,7 +68,7 @@ URL: https://code.google.com/p/io-2012-slides
     <article>
         <ul>
           <li>Modes allow for for reuse of keys, decreasing the need for keyboard-cording</li>
-          <li>The mode in Vim are:
+          <li>The 4 modes in Vim are:
             <ul class="build">
               <li><code>Normal</code></li>
               <li><code>Insert</code></li>
@@ -96,7 +96,7 @@ URL: https://code.google.com/p/io-2012-slides
           <li>(:) - Enter command-line mode</li>
           <li>(hjkl) - moves cursor Left, Down, Up, Right</li>
           <li>:wq  - Save and quit (followed by a file name if not yet named) (ZZ for short if already named)
-          <li>:q  - quits (ZQ for short. <b>WARNING</b>: This will not prompt you if you have unsaved work. Use with care) 
+          <li>:q  - quits (ZQ for short. <b>WARNING</b>: This will not prompt you if you have unsaved work.) 
         </ul>
         <h3><b><u>Help!</u></b></h3>
         <p>Vim has awesome help built in</p>
@@ -167,86 +167,6 @@ URL: https://code.google.com/p/io-2012-slides
       </ul>
     </article>
   </slide>
-
-  <slide>
-    <aside class="note">
-      <section>
-        <ul>
-          <li>nocompatible - stop acting like vi</li>
-          <li>backspace=2 - short for: backspace=indent,eol,start. Allows for backspacing over automatically inserted indents, newlines, and the start of <code>insert</code> mode</li>
-          <li>laststatus - ensures that status bar is always shown</li>
-        </ul>
-      </section>
-    </aside>
-    <hgroup>
-      <h2>.vimrc - Tweaking Vim to Your Liking</h2>
-    </hgroup>
-    <article class="smaller">
-    <div class="columns-2" style="height: 16em">
-      <ul>
-        <li>Options
-          <ul>
-            <li>syntax on</li>
-            <li>set nocompatible</li>
-            <li>set smartindent</li>
-            <li>set expandtab</li>
-            <li>set backspace=2</li>
-          </ul>
-        </li>
-        <li>Tab Characters
-          <ul>
-            <li>set softtabstop=4</li>
-            <li>set shiftwidth=4</li>
-          </ul>
-        </li>
-        <li>Style
-          <ul>
-            <li>set number</li>
-            <li>set showcmd</li>
-            <li>set showmatch</li>
-            <li>set incsearch</li>
-            <li>set laststatus=2</li>
-            <li>set scrolloff=2</li>
-          </ul>
-        </li>
-      </ul>
-      <ul>
-        <li>Keybindings
-          <ul>
-            <li>imap jj &lt;ESC&gt;</li>
-            <li>nnoremap ; :</li>
-            <li>vnoremap ; :</li>
-            <li>nmap &lt;F12&gt; :set number!&lt;CR&gt;</li>
-            <li>nmap &lt;F4&gt; :set invhls&lt;CR&gt;</li>
-            <li>nmap &lt;F3&gt; :set paste!&lt;CR&gt;</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    </article>
-  </slide>
-
-  <slide>
-    <hgroup>
-      <h2>.vimrc - continued...</h2>
-    </hgroup>
-    <article>
-      <ul>
-        <li>Status line can contain more useful info than it does by default. For example:</li>
-        <ul>
-          <li>buffer number</li>
-          <li>file type</li>
-          <li>full path</li>
-          <li>modified flag</li>
-          <li>active register</li>
-          <li>current line</li>
-          <li>total lines</li>
-          <li>column number</li>
-          <li>percent through file</li>
-        </ul>
-      </ul>
-    </article>
- </slide>
 
  <slide>
   <aside class="note">
@@ -415,6 +335,85 @@ register at cursor postion
     </article>
   </slide>
 
+  <slide>
+    <aside class="note">
+      <section>
+        <ul>
+          <li>nocompatible - stop acting like vi</li>
+          <li>backspace=2 - short for: backspace=indent,eol,start. Allows for backspacing over automatically inserted indents, newlines, and the start of <code>insert</code> mode</li>
+          <li>laststatus - ensures that status bar is always shown</li>
+        </ul>
+      </section>
+    </aside>
+    <hgroup>
+      <h2>.vimrc - Tweaking Vim to Your Liking</h2>
+    </hgroup>
+    <article class="smaller">
+    <div class="columns-2" style="height: 16em">
+      <ul>
+        <li>Options
+          <ul>
+            <li>syntax on</li>
+            <li>set nocompatible</li>
+            <li>set smartindent</li>
+            <li>set expandtab</li>
+            <li>set backspace=2</li>
+          </ul>
+        </li>
+        <li>Tab Characters
+          <ul>
+            <li>set softtabstop=4</li>
+            <li>set shiftwidth=4</li>
+          </ul>
+        </li>
+        <li>Style
+          <ul>
+            <li>set number</li>
+            <li>set showcmd</li>
+            <li>set showmatch</li>
+            <li>set incsearch</li>
+            <li>set laststatus=2</li>
+            <li>set scrolloff=2</li>
+          </ul>
+        </li>
+      </ul>
+      <ul>
+        <li>Keybindings
+          <ul>
+            <li>imap jj &lt;ESC&gt;</li>
+            <li>nnoremap ; :</li>
+            <li>vnoremap ; :</li>
+            <li>nmap &lt;F12&gt; :set number!&lt;CR&gt;</li>
+            <li>nmap &lt;F4&gt; :set invhls&lt;CR&gt;</li>
+            <li>nmap &lt;F3&gt; :set paste!&lt;CR&gt;</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    </article>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>.vimrc - continued...</h2>
+    </hgroup>
+    <article>
+      <ul>
+        <li>Status line can contain more useful info than it does by default. For example:</li>
+        <ul>
+          <li>buffer number</li>
+          <li>file type</li>
+          <li>full path</li>
+          <li>modified flag</li>
+          <li>active register</li>
+          <li>current line</li>
+          <li>total lines</li>
+          <li>column number</li>
+          <li>percent through file</li>
+        </ul>
+      </ul>
+    </article>
+  </slide>
   <slide>
     <hgroup>
       <h2>Misc</h2>
