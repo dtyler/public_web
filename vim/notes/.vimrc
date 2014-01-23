@@ -53,15 +53,15 @@ endif
 " statusline
 set laststatus=2
 set statusline=
-set statusline +=%1*\ %n\ %*		"buffer number
-set statusline +=%3*%y%*		"file type
-set statusline +=%4*\ %<%F%*		"full path
-set statusline +=%2*%m%*		"modified flag
-set statusline +=%=%{v:register}	"active register
-set statusline +=%1*%5l%*		"current line
-set statusline +=%2*/%L%*		"total lines
-set statusline +=%1*%4c\ %*		"column number
-set statusline +=%P			"percent through file
+set statusline+=%1*\ %n\ %*		"buffer number
+set statusline+=%3*%y%*	        	"file type
+set statusline+=%4*\ %<%F%*		"full path
+set statusline+=%2*%m%*		        "modified flag
+set statusline+=%=%{v:register}	        "active register
+set statusline+=%1*%5l%*		"current line
+set statusline+=%2*/%L%*		"total lines
+set statusline+=%1*%4c\ %*		"column number
+set statusline+=%P			"percent through file
 
 " Protect large files from sourcing and other overhead.
 " Files become read only
