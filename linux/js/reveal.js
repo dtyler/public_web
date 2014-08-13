@@ -2030,8 +2030,12 @@ var Reveal = (function(){
 			var horizontalSlideCount = horizontalSlides.length;
 			var horizontalOffset = -( backgroundWidth - slideWidth ) / ( horizontalSlideCount-1 ) * indexh;
 
+
 			var slideHeight = dom.background.offsetHeight;
 			var verticalSlideCount = verticalSlides.length;
+                        if ( config.parallaxBackgroundVerticalDisabled === true ) {
+                            verticalSlideCount = 0;
+                        }
 			var verticalOffset = verticalSlideCount > 0 ? -( backgroundHeight - slideHeight ) / ( verticalSlideCount-1 ) * indexv : 0;
 
 			dom.background.style.backgroundPosition = horizontalOffset + 'px ' + verticalOffset + 'px';
