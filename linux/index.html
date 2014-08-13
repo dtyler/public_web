@@ -4,7 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>Unix: Features and Design Choices</title>
 
 		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
 		<meta name="author" content="Hakim El Hattab">
@@ -43,13 +43,36 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>HTML Presentations Made Easy</h3>
+					<h1>Unix: Features and Design Choices</h1>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Created by <a href="http://github.com/dtyler">Daniel Tyler</a></small>
 					</p>
 				</section>
 
+                                <section>
+                                    <section>
+                                            <h2>File System Structure</h2>
+                                            <ul>
+                                                <li>consistent place for certain types of file</li>
+                                                <li>extensible (mount points)</li>
+                                                <li>everything is a file</li>
+                                            </ul>
+                                    </section>
+                                    <section>
+                                        <h2>A thing for everything and everything in it's place</h2>
+                                        <p>A few common ones:</p>
+                                        <ul>
+                                            <li>/usr/bin</li>
+                                            <li>/usr/sbin</li>
+                                            <li>/etc</li>
+                                            <li>/dev</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h2>A place to hang your hat</h2>
+                                        <p>Example: An open shell server with user's home directories store on an external file server</p>
+                                    </section>
+                                </section>
 			</div>
 
 		</div>
@@ -71,8 +94,9 @@
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
 				// Parallax scrolling
-				parallaxBackgroundImage: 'images/ctct_background.png',
-				parallaxBackgroundSize: '1728px 800px',
+				parallaxBackgroundImage: 'images/ctct_background2.png',
+				parallaxBackgroundSize: '4202px 800px',
+                                parallaxBackgroundVerticalDisabled: true,
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
