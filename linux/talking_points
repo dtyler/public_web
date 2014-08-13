@@ -6,4 +6,8 @@ Why I love linux (and most unix descendants)
     - everything is a file
 * Small tools with specific tasks
     - cat, grep, cut, find, vim
-*  permissions wired into the filesystem
+* Permissions wired into the file system
+* Package management
+    - Central tracking/management of 
+        - files associated with programs
+        - interdependency between version
