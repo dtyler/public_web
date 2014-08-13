@@ -78,24 +78,45 @@
                                         </ul>
                                     </section>
                                     <section>
-                                        <h2>A place to hang your hat</h2>
+                                        <h2>The PATH variable</h2>
                                         <ul>
-                                            <li>'Permanent' mounted file systems are given folders under <strong>/mnt</strong> (or <strong>/mount</strong> in some operating systems)</li>
-                                            <li>'Temporary' file systems get mounted under <strong>/media</strong></li>
+                                            <li>Provides a list of folders to search for executables</li>
+                                            <li>First match wins</li>
                                         </ul>
                                     </section>
                                 </section>
                                 <section>
-                                    <h2>Permissions</h2>
-                                    <p>Every file as access permissions baked into it's entry in the file system</p>
-                                    <pre><code data-trim>
+                                    <section>
+                                        <h2>Permissions</h2>
+                                        <p>Every file as access permissions baked into it's entry in the file system</p>
+                                        <pre><code data-trim>
 $ ls -l .ssh/config /tmp/registry.lock
 -rw-r--r--  1 dtyler  staff   491B Jun 13 10:25 .ssh/config
 -rw-rw-rw-  1 root    wheel      0 Aug 11 08:35 /tmp/registry.lock
 
 $ groups dtyler | grep wheel
 $
-                                    </code></pre>
+                                        </code></pre>
+                                    </section>
+                                    <section>
+                                        <h2>Changing Permissions</h2>
+                                        <pre><code data-trim>
+chown &lt;user&gt;:&lt;group&gt; &lt;file&gt; [files...]
+                                        </code></pre>
+                                        <pre class="fragment"><code data-trim>
+chmod [-fv] [-R [-H | -L | -P]] mode file ...
+                                        </code></pre>
+                                        <pre class="fragment"><code data-trim>
+chmod Mode Grammar
+
+mode         ::= clause [, clause ...]
+clause       ::= [who ...] [action ...] action
+action       ::= op [perm ...]
+who          ::= a | u | g | o
+op           ::= + | - | =
+perm         ::= r | s | t | w | x | X | u | g | o
+                                        </code></pre>
+                                    </section>
                                 </section>
                                 <section>
                                     <section>
@@ -138,6 +159,28 @@ $ for dir in ~/projects/*
                                         <aside class="notes">
                                             for dir in *; do; echo -n 'repo size is: '; du -sh $dir; done
                                         </aside>
+                                    </section>
+                                </section>
+                                <section>
+                                    <section>
+                                        <h2>Pipes</h2>
+                                        <ul>
+                                            <li>Multiple commands connected one ofter the other using '|'. The output of each command becomes the input to the end</li>
+                                            <li>Pipes allow the user to string together a collection of small well-defined modular tools to create a pipeline that can accomplish a complex task</li>
+                                        <ul>
+                                    </section>
+                                    <section>
+                                        <h2>Pipeline Example</h2>
+                                        <pre><code data-trim>
+$ ps aux | grep -v grep | grep COMMAND ; ps aux | grep -v grep | grep -i zsh
+USER      PID  %CPU %MEM   RSS   TT  STAT STARTED      TIME COMMAND
+dtyler  30512   1.3  0.0  7052 s005  Ss    7:56AM   0:01.74 /bin/zsh --login
+dtyler  21352   0.0  0.1 10980 s004  Ss    8:17PM   0:03.71 /bin/zsh --login
+dtyler  14952   0.0  0.0  7252 s003  Ss   12:06PM   0:01.61 /bin/zsh --login
+dtyler  13976   0.0  0.0  1040 s002  Ss+  11:04AM   0:00.32 /bin/zsh --login
+dtyler   4584   0.0  0.0  1056 s001  Ss+  Mon11AM   0:02.08 /bin/zsh --login
+dtyler   1341   0.0  0.0  1024 s000  Ss+  Mon08AM   0:03.45 /bin/zsh --login
+                                        </code></pre>
                                     </section>
                                 </section>
                                 <section>
