@@ -51,12 +51,20 @@
 
                                 <section>
                                     <section>
-                                            <h2>File System Structure</h2>
-                                            <ul>
-                                                <li>consistent place for certain types of file</li>
-                                                <li>extensible (mount points)</li>
-                                                <li>everything is a file</li>
-                                            </ul>
+                                        <h2>File System Structure</h2>
+                                        <ul>
+                                            <li>consistent place for certain types of file</li>
+                                            <li>extensible (mount points)</li>
+                                            <li>everything is a file</li>
+                                        </ul>
+                                    </section>
+                                    <section>
+                                        <h2>Everything is a file</h2>
+                                        <div>
+                                            <img style="margin-right: 15px" src="images/folder.png" alt="Folder" width="120" height="100">
+                                            <img style="margin-right: 15px" src="images/database.png" alt="Database" width="100" height="120">
+                                            <img src="images/network.png" alt="Network" width="100" height="120">
+                                        </div>
                                     </section>
                                     <section>
                                         <h2>A thing for everything and everything in it's place</h2>
@@ -66,13 +74,76 @@
                                             <li>/usr/sbin</li>
                                             <li>/etc</li>
                                             <li>/dev</li>
+                                            <li>/opt</li>
                                         </ul>
                                     </section>
                                     <section>
                                         <h2>A place to hang your hat</h2>
-                                        <p>Example: An open shell server with user's home directories store on an external file server</p>
+                                        <ul>
+                                            <li>'Permanent' mounted file systems are given folders under <strong>/mnt</strong> (or <strong>/mount</strong> in some operating systems)</li>
+                                            <li>'Temporary' file systems get mounted under <strong>/media</strong></li>
+                                        </ul>
                                     </section>
                                 </section>
+                                <section>
+                                    <h2>Permissions</h2>
+                                    <p>Every file as access permissions baked into it's entry in the file system</p>
+                                    <pre><code data-trim>
+$ ls -l .ssh/config /tmp/registry.lock
+-rw-r--r--  1 dtyler  staff   491B Jun 13 10:25 .ssh/config
+-rw-rw-rw-  1 root    wheel      0 Aug 11 08:35 /tmp/registry.lock
+
+$ groups dtyler | grep wheel
+$
+                                    </code></pre>
+                                </section>
+                                <section>
+                                    <section>
+                                        <h2>Key tools</h2>
+                                        <ol>
+                                            <li>grep, find</li>
+                                            <li>shell globbing</li>
+                                            <li>for loops</li>
+                                        </ol>
+                                    </section>
+                                    <section>
+                                        <h2>Finding things</h2>
+                                        <pre><code data-trim>
+$ fgrep -i 'oops page' server-ui.log
+$ find /opt/cc -iname ldap\*jar
+                                        </code></pre>
+                                        <aside class="notes">
+                                            <ul>
+                                                <li>finding the code or the error is half the battle</li>
+                                                <li>find by type</li>
+                                            </ul>
+                                        </aside>
+                                    </section>
+                                    <section>
+                                        <h2>Shell globbing</h2>
+                                        <pre><code data-trim>
+$ git add Job-*.yaml
+$ git rm Job-[1-9]*.yaml
+                                        </code></pre>
+                                    </section>
+                                    <section>
+                                        <h2>Looping</h2>
+                                        <pre><code data-trim>
+$ for dir in ~/projects/*
+  do
+  echo -n 'repo size is: '
+  du -sh $dir
+  done
+                                        </code></pre>
+                                        <aside class="notes">
+                                            for dir in *; do; echo -n 'repo size is: '; du -sh $dir; done
+                                        </aside>
+                                    </section>
+                                </section>
+                                <section>
+                                    <h1>Questions?</h1>
+                                </section>
+
 			</div>
 
 		</div>
