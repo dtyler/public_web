@@ -1,0 +1,13 @@
+Why I love linux (and most unix descendants)
+
+* File System Structure
+    - consistent place for certain types of file
+    - extensible (mount points)
+    - everything is a file
+* Small tools with specific tasks
+    - cat, grep, cut, find, vim
+* Permissions wired into the file system
+* Package management
+    - Central tracking/management of 
+        - files associated with programs
+        - interdependency between version
