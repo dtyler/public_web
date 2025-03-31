@@ -18,7 +18,7 @@
     "url": "git://github.com/hakimel/reveal.js.git"
   },
   "engines": {
-    "node": "~0.8.0"
+    "node": "~v23"
   },
   "dependencies": {
     "express": "^4.19.2",
@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "grunt": "^1.6.1",
-    "grunt-contrib-connect": "^4.0.0",
+    "grunt-contrib-connect": "^5.0.1",
     "grunt-contrib-cssmin": "^5.0.0",
     "grunt-contrib-jshint": "^3.2.0",
     "grunt-contrib-qunit": "^10.0.0",
